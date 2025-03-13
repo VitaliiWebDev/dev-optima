@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-export default function SectionInnovative() {
+export default function InnovativeSection() {
   return (
     <section className="mt-10 mb-8 lg:mt-38">
       <div className="container">

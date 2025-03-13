@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-export default function SectionAbout() {
+export default function AboutSection() {
   return (
     <section className="mt-25 mb-10 lg:mb-38">
       <div className="container">
@@ -24,7 +24,7 @@ export default function SectionAbout() {
               and operations.
             </p>
             <div className="grid grid-cols-2 lg:grid-cols-[15.125rem_15.125rem] gap-x-10 lg:gap-x-20 gap-y-10">
-              <div className="">
+              <div>
                 <div className="ico-primary mb-4">
                   <Image
                     src="/icons/transformation-icon.svg"
@@ -38,7 +38,7 @@ export default function SectionAbout() {
                   Reshaping businesses with DevOps expertise.
                 </p>
               </div>
-              <div className="">
+              <div>
                 <div className="ico-primary mb-4">
                   <Image
                     src="/icons/operations-icon.svg"
@@ -52,7 +52,7 @@ export default function SectionAbout() {
                   Streamline processes for productivity gains.
                 </p>
               </div>
-              <div className="">
+              <div>
                 <div className="ico-primary mb-4">
                   <Image
                     src="/icons/implementation-icon.svg"
@@ -66,7 +66,7 @@ export default function SectionAbout() {
                   Seamless software delivery pipeline.
                 </p>
               </div>
-              <div className="">
+              <div>
                 <div className="ico-primary mb-4">
                   <Image
                     src="/icons/automation-icon.svg"
