@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useCallback } from "react";
 import Image from "next/image";
+import fakeApiRequest from "@/app/api/fakeApiRequest";
 
 export default function FormFreeTrial() {
   const [placeholder, setPlaceholder] = useState("Your business email...");
@@ -134,16 +135,3 @@ export default function FormFreeTrial() {
     </>
   );
 }
-
-const fakeApiRequest = (email: string) => {
-  return new Promise<string>((resolve, reject) => {
-    setTimeout(() => {
-      if (Math.random() > 0.5) {
-        console.log(email);
-        resolve("Send success");
-      } else {
-        reject("Send error. Try again later");
-      }
-    }, 500);
-  });
-};

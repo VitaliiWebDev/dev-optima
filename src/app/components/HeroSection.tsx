@@ -1,5 +1,4 @@
 import Image from "next/image";
-
 import FormFreeTrial from "./FormFreeTrial";
 
 export default function HeroSection() {
