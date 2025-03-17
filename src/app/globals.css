@@ -1,0 +1,214 @@
+@import "tailwindcss";
+
+@layer utilities {
+  .container {
+    @apply px-4 max-w-[80.25rem] lg:px-8 mx-auto;
+
+    &.max-w-7xl {
+      @apply max-w-[96rem];
+    }
+  }
+}
+
+@theme {
+  --font-body: var(--font-inter), "sans-serif";
+  --font-heading: var(--font-aeonik), "sans-serif";
+  --code-font: "Source Code Pro", sans-serif;
+  --font-ibm: "IBM Plex Mono", sans-serif;
+  --home-bg: #000;
+  --primary-blue: #243bb9;
+  --secondary-blue: #3f57da;
+  --black: #0a0812;
+  --grey-100: #eff1f6;
+  --grey-200: #bdc4d1;
+  --primary-green: #4db29a;
+  --primary-pink: #be6aa7;
+  --primary-orange: #d8a87c;
+  --white: #fff;
+  --blue-400: #172136;
+  --blue-100: #3d79f5;
+  --blue-200: #0054ff;
+}
+
+@layer base {
+  html {
+    @apply scroll-smooth max-sm:text-[14px];
+  }
+  body {
+    @apply font-body bg-(--black) text-white;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-heading leading-[112.5%];
+  }
+
+  h1 {
+    @apply text-3xl md:text-5xl xl:text-7xl -tracking-[0.01em] font-normal;
+  }
+
+  h2 {
+    @apply text-3xl lg:text-5xl;
+  }
+
+  h3 {
+    @apply text-xl lg:text-2xl leading-[125%];
+  }
+
+  p,
+  li {
+    @apply text-(--grey-200) font-light text-base lg:text-xl leading-[150%];
+
+    b {
+      @apply text-(--grey-100) font-medium;
+    }
+  }
+}
+
+@layer components {
+  .btn {
+    @apply px-9 py-4 inline-block font-semibold rounded-full leading-none text-center cursor-pointer transition-colors;
+
+    &.btn-secondary {
+      @apply border border-solid border-(--primary-blue) bg-[rgba(36,59,185,0.2)];
+
+      &:hover {
+        @apply bg-[rgba(36,59,185,0.5)];
+      }
+    }
+
+    &.btn-primary {
+      @apply bg-(--primary-blue);
+
+      &:hover {
+        @apply bg-(--secondary-blue);
+      }
+    }
+  }
+
+  .link-hover-bold {
+    @apply font-medium text-transparent before:content-[attr(data-before)] relative;
+
+    &:hover {
+      &:before {
+        @apply font-medium text-white;
+      }
+    }
+
+    &:before {
+      @apply text-(--grey-200) font-normal absolute left-0 translate-x-[0.5px];
+    }
+  }
+}
+
+.hero-section-bg {
+  @apply relative;
+
+  &:before {
+    @apply block content-[""] absolute bg-[url(/images/hero-bg.svg)] w-[112.4375rem] aspect-[1799/760] -top-[13.6rem] left-[50%] -translate-x-[46.7%] -z-[1] bg-cover bg-center pointer-events-none;
+  }
+}
+
+.hero-container-bg {
+  @apply relative;
+
+  &:before {
+    @apply block content-[""] absolute w-[50rem] aspect-1/1 bg-[rgba(20,28,72,0.6)] blur-[6.25rem] top-0 left-0 -z-[1] -translate-[75%] rounded-full pointer-events-none;
+  }
+}
+
+.hero-right-bg {
+  @apply relative;
+
+  &:before {
+    @apply block content-[""] absolute w-[44.75rem] aspect-[716/396] bg-[rgba(20,28,72,0.6)] blur-[100px] top-[50%] left-[50%] -z-[1] -translate-[50%] rounded-full pointer-events-none;
+  }
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.rotate {
+  animation: spin 2s linear infinite;
+}
+
+.about-img-round {
+  @apply relative;
+
+  &:after {
+    @apply block content-[""] absolute w-[18.75rem] aspect-1/1 bg-[rgba(20,28,72,0.3)] blur-[3.125rem] -top-[2.25rem] -right-[2.75rem] rounded-full pointer-events-none;
+  }
+}
+
+.ico-primary {
+  @apply shadow-[0_0_9px_0_rgba(0,0,0,0.4)] relative inline-block;
+
+  &:before {
+    @apply block content-[""] absolute w-[1.375rem] aspect-1/1 bg-(--blue-200) blur-[1.5rem] top-[50%] left-[50%] -translate-[50%] rounded-full pointer-events-none;
+  }
+}
+
+.cards-bg {
+  @apply relative;
+
+  &:after {
+    @apply block content-[""] absolute w-full aspect-[1220/396] bg-[rgba(20,28,72,0.6)] blur-[18.75rem] top-[50%] left-[50%] -translate-[50%] rounded-full -z-10 pointer-events-none;
+  }
+}
+
+.innovative-card {
+  @apply relative bg-gradient-to-b from-[rgba(33,66,136,0.25)] to-[rgba(8,20,43,0.25)]  rounded-2xl;
+
+  &:before {
+    @apply content-[""] absolute inset-0 p-[1px] bg-gradient-to-b from-[rgba(116,159,246,0.3)] to-[rgba(21,57,132,0.3)] rounded-2xl h-full pointer-events-none;
+    mask: conic-gradient(#000 0 0) content-box exclude, conic-gradient(#000 0 0);
+  }
+}
+
+.ico-secondary {
+  @apply shadow-[0_0_15px_0_rgba(0,0,0,0.4)] relative inline-block;
+
+  &:before {
+    @apply block content-[""] absolute w-[1.375rem] aspect-1/1 bg-(--blue-200) blur-[2rem] top-[50%] left-[50%] -translate-[50%] rounded-full pointer-events-none;
+  }
+}
+
+.ready-container-bg {
+  @apply relative;
+
+  &:before,
+  &:after {
+    @apply block content-[""] absolute w-[50rem] aspect-1/1 bg-[rgba(20,28,72,0.6)] blur-[12rem] top-[1.6875rem] -z-[1] rounded-full pointer-events-none;
+  }
+
+  &:before {
+    @apply -left-[4.125rem] -translate-x-[100%];
+  }
+  &:after {
+    @apply -right-[4.125rem] translate-x-[100%];
+  }
+}
+
+.footer-nav {
+  @apply mb-1;
+
+  h5 {
+    @apply mb-4 text-white;
+  }
+
+  ul {
+    li {
+      @apply text-base mb-3;
+    }
+  }
+}
