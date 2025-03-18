@@ -9,7 +9,7 @@ export default function Footer() {
           <Link href="/">
             <Image src="./images/logo.svg" alt="Logo" width={144} height={40} />
           </Link>
-          <div className="flex max-sm:flex-col max-lg:justify-between max-lg:w-full gap-10 lg:gap-[11rem] md:ml-auto">
+          <div className="grid grid-cols-2 md:grid-cols-3 max-lg:w-full gap-10 lg:gap-[11rem] md:ml-auto">
             <div className="footer-nav">
               <h2 className="text-base mb-4 font-medium font-body">
                 Resources

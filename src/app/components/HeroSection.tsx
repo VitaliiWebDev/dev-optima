@@ -38,6 +38,7 @@ export default function HeroSection() {
               alt=""
               width={376}
               height={244}
+              priority
               className="drop-shadow-[0_8px_30px_rgba(0,0,0,0.3)] blur-xs absolute top-0 right-0 w-[63.8%]"
             />
             <div className="drop-shadow-[0_8px_30px_rgba(0,0,0,0.3)] absolute w-[85.2%] right-[14.77%] top-[21.4%] bg-gradient-to-b from-[rgba(35,70,144,0.25)] to-[rgba(10,24,52,0.25)] backdrop-blur-[3rem] rounded-2xl">
@@ -46,6 +47,7 @@ export default function HeroSection() {
                 alt=""
                 width={502}
                 height={329}
+                priority
               />
             </div>
           </div>
