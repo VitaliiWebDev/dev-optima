@@ -119,7 +119,7 @@ export default function FormFreeTrial() {
               handleChange(e);
             }}
             placeholder={placeholder}
-            className="h-[3.5rem] px-6 w-full placeholder:font-light placeholder:text-[] focus:outline-0"
+            className="outline-none h-[3.5rem] px-6 w-full placeholder:font-light placeholder:text-[]"
             style={{
               maskImage: "linear-gradient(white 0%, white 100%)",
             }}
