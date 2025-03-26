@@ -67,6 +67,9 @@
       @apply max-w-[96rem];
     }
   }
+  input {
+    caret-color: #97b1e6;
+  }
   input:-webkit-autofill,
   input:-webkit-autofill:focus,
   input:-webkit-autofill:hover,
@@ -74,6 +77,17 @@
     box-shadow: 0 0 0px 1000px transparent inset !important;
     -webkit-text-fill-color: var(--grey-200) !important;
     transition: background-color 9999s ease-in-out 0s !important;
+  }
+  input::placeholder {
+    background: linear-gradient(
+      90deg,
+      #c8d6f2 0%,
+      #adc2ec 32.41%,
+      #9eb7e8 71.97%,
+      #97b1e6 100%
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
   }
 }
 
