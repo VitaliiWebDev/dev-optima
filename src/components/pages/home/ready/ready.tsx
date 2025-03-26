@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-export default function ReadySection() {
+export default function Ready() {
   return (
     <section className="pb-[11rem] text-center">
       <div className="container flex flex-col items-center ready-container-bg">

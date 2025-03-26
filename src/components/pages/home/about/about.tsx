@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-export default function AboutSection() {
+export default function About() {
   return (
     <section className="mt-25 mb-10 lg:mb-38">
       <div className="container">

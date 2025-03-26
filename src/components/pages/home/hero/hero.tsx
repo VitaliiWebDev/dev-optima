@@ -1,5 +1,5 @@
 import Image from "next/image";
-import FormFreeTrial from "./FormFreeTrial";
+import FormFreeTrial from "@/components/shared/form-free-trial";
 
 export default function HeroSection() {
   return (

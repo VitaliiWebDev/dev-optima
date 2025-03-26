@@ -1,21 +1,21 @@
-import Header from "./components/Header";
-import HeroSection from "./components/HeroSection";
-import AboutSection from "./components/AboutSection";
-import InnovativeSection from "./components/InnovativeSection";
-import TestimonialsSection from "./components/TestimonialsSection";
-import ReadySection from "./components/ReadySection";
-import Footer from "./components/Footer";
+import Header from "../components/pages/home/header";
+import Hero from "../components/pages/home/hero";
+import About from "../components/pages/home/about";
+import Innovative from "../components/pages/home/innovative";
+import Testimonials from "../components/pages/home/testimonials";
+import Ready from "../components/pages/home/ready";
+import Footer from "../components/pages/home/footer/footer";
 
 export default function Home() {
   return (
     <>
       <Header />
       <main>
-        <HeroSection />
-        <AboutSection />
-        <InnovativeSection />
-        <TestimonialsSection />
-        <ReadySection />
+        <Hero />
+        <About />
+        <Innovative />
+        <Testimonials />
+        <Ready />
         <Footer />
       </main>
     </>

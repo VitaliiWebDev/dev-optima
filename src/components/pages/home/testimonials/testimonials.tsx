@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-export default function TestimonialsSection() {
+export default function Testimonials() {
   return (
     <section className="py-25 lg:h-[53.125rem] my-8 lg:bg-[url(/images/testimonials-bg.svg)] bg-[120rem_auto] bg-center flex items-center">
       <div className="container ">
