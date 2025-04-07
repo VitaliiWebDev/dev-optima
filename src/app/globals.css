@@ -3,21 +3,18 @@
 @theme {
   --font-body: var(--font-inter), "sans-serif";
   --font-heading: var(--font-aeonik), "sans-serif";
-  --code-font: "Source Code Pro", sans-serif;
-  --font-ibm: "IBM Plex Mono", sans-serif;
-  --home-bg: #000;
-  --primary-blue: #243bb9;
-  --secondary-blue: #3f57da;
-  --black: #0a0812;
-  --grey-100: #eff1f6;
-  --grey-200: #bdc4d1;
-  --primary-green: #4db29a;
-  --primary-pink: #be6aa7;
-  --primary-orange: #d8a87c;
-  --white: #fff;
-  --blue-400: #172136;
-  --blue-100: #3d79f5;
-  --blue-200: #0054ff;
+  --color-primary-blue: #243bb9;
+  --color-secondary-blue: #3f57da;
+  --color-black: #0a0812;
+  --color-grey-100: #eff1f6;
+  --color-grey-200: #bdc4d1;
+  --color-primary-green: #4db29a;
+  --color-primary-pink: #be6aa7;
+  --color-primary-orange: #d8a87c;
+  --color-white: #fff;
+  --color-blue-100: #3d79f5;
+  --color-blue-200: #0054ff;
+  --color-blue-400: #172136;
 }
 
 @layer base {
@@ -25,7 +22,7 @@
     @apply scroll-smooth max-sm:text-[14px];
   }
   body {
-    @apply font-body bg-(--black) text-white;
+    @apply font-body bg-black text-white antialiased;
   }
 
   h1,
@@ -34,7 +31,7 @@
   h4,
   h5,
   h6 {
-    @apply font-heading leading-[112.5%];
+    @apply font-heading leading-[1.125];
   }
 
   h1 {
@@ -46,39 +43,32 @@
   }
 
   h3 {
-    @apply text-xl lg:text-2xl leading-[125%];
+    @apply text-xl lg:text-2xl leading-[1.125];
   }
 
   p,
   li {
-    @apply text-(--grey-200) font-light text-base lg:text-xl leading-[150%];
+    @apply text-grey-200 font-light text-base lg:text-xl leading-[1.5];
 
     b {
-      @apply text-(--grey-100) font-medium;
-    }
-  }
-}
-
-@layer utilities {
-  .container {
-    @apply px-4 max-w-[80.25rem] lg:px-8 mx-auto;
-
-    &.max-w-7xl {
-      @apply max-w-[96rem];
+      @apply text-grey-100 font-medium;
     }
   }
   input {
     caret-color: #97b1e6;
+    background: transparent;
   }
+
   input:-webkit-autofill,
   input:-webkit-autofill:focus,
   input:-webkit-autofill:hover,
   input:-webkit-autofill:active {
     box-shadow: 0 0 0px 1000px transparent inset !important;
-    -webkit-text-fill-color: var(--grey-200) !important;
+    -webkit-text-fill-color: #97b1e6 !important;
     transition: background-color 9999s ease-in-out 0s !important;
   }
   input::placeholder {
+    @apply font-body;
     background: linear-gradient(
       90deg,
       #c8d6f2 0%,
@@ -91,12 +81,22 @@
   }
 }
 
+@layer utilities {
+  .container {
+    @apply px-4 max-w-[80.25rem] lg:px-8 mx-auto;
+
+    &.max-w-7xl {
+      @apply max-w-[96rem];
+    }
+  }
+}
+
 @layer components {
   .btn {
     @apply px-9 py-4 inline-block font-semibold rounded-full leading-none text-center cursor-pointer transition-colors;
 
     &.btn-secondary {
-      @apply border border-solid border-(--primary-blue) bg-[rgba(36,59,185,0.2)];
+      @apply border border-solid border-primary-blue bg-[rgba(36,59,185,0.2)];
 
       &:hover {
         @apply bg-[rgba(36,59,185,0.5)];
@@ -104,10 +104,10 @@
     }
 
     &.btn-primary {
-      @apply bg-(--primary-blue);
+      @apply bg-primary-blue;
 
       &:hover {
-        @apply bg-(--secondary-blue);
+        @apply bg-secondary-blue;
       }
     }
   }
@@ -119,10 +119,20 @@
       &:before {
         @apply font-medium text-white;
       }
+      svg {
+        path {
+          fill: #fff;
+        }
+      }
     }
 
     &:before {
-      @apply text-(--grey-200) font-normal absolute left-0 translate-x-[0.5px];
+      @apply text-grey-200 font-normal absolute left-0 translate-x-[0.5px];
+    }
+    svg {
+      path {
+        fill: var(--color-grey-200);
+      }
     }
   }
 
@@ -150,19 +160,6 @@
     }
   }
 
-  @keyframes spin {
-    from {
-      transform: rotate(0deg);
-    }
-    to {
-      transform: rotate(360deg);
-    }
-  }
-
-  .rotate {
-    animation: spin 2s linear infinite;
-  }
-
   .about-img-round {
     @apply relative;
 
@@ -175,7 +172,7 @@
     @apply shadow-[0_0_9px_0_rgba(0,0,0,0.4)] relative inline-block;
 
     &:before {
-      @apply block content-[""] absolute w-[1.375rem] aspect-1/1 bg-(--blue-200) blur-[1.5rem] top-[50%] left-[50%] -translate-[50%] rounded-full pointer-events-none;
+      @apply block content-[""] absolute w-[1.375rem] aspect-1/1 bg-blue-200 blur-[1.5rem] top-[50%] left-[50%] -translate-[50%] rounded-full pointer-events-none;
     }
   }
 
@@ -201,7 +198,7 @@
     @apply shadow-[0_0_15px_0_rgba(0,0,0,0.4)] relative inline-block;
 
     &:before {
-      @apply block content-[""] absolute w-[1.375rem] aspect-1/1 bg-(--blue-200) blur-[2rem] top-[50%] left-[50%] -translate-[50%] rounded-full pointer-events-none;
+      @apply block content-[""] absolute w-[1.375rem] aspect-1/1 bg-blue-200 blur-[2rem] top-[50%] left-[50%] -translate-[50%] rounded-full pointer-events-none;
     }
   }
 

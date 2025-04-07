@@ -1,5 +1,30 @@
 import Image from "next/image";
 
+import ContinuousImg from "@/images/continuous-img.svg";
+import CloudImg from "@/images/cloud-img.svg";
+import TestingImg from "@/images/testing-img.svg";
+
+const innovativeData = [
+  {
+    img: ContinuousImg,
+    title: "Continuous Integration & Deployment",
+    description:
+      "Streamline your development process with our advanced CI/CD solutions, ensuring faster and more reliable code deployment.",
+  },
+  {
+    img: CloudImg,
+    title: "Cloud Solutions & Infrastructure Management",
+    description:
+      "Leverage the cloud for scalability and efficiency. We provide comprehensive cloud infrastructure management and optimization services. ",
+  },
+  {
+    img: TestingImg,
+    title: "Automated Testing & Quality Assurance",
+    description:
+      "Enhance product quality with our automated testing services, designed to detect issues early and reduce time-to-market.",
+  },
+];
+
 export default function Innovative() {
   return (
     <section className="mt-10 mb-8 lg:mt-38">
@@ -14,66 +39,19 @@ export default function Innovative() {
           Personalized solutions for growth and evolution.
         </p>
         <div className="flex flex-wrap justify-center gap-10 cards-bg">
-          <div className="innovative-card max-w-[23.75rem]">
-            <div className="innovative-card__inner">
-              <div className="md:h-[17.3125rem]">
-                <Image
-                  src="/images/continuous-img.svg"
-                  alt=""
-                  width={380}
-                  height={277}
-                ></Image>
-              </div>
-              <div className="p-8 pt-0">
-                <h3 className="text-xl mb-3">
-                  Continuous Integration & Deployment
-                </h3>
-                <p className="text-base leading-[137.5%]">
-                  Streamline your development process with our advanced CI/CD
-                  solutions, ensuring faster and more reliable code deployment.
-                </p>
+          {innovativeData.map(({ img, title, description }) => (
+            <div className="innovative-card max-w-[23.75rem]" key={title}>
+              <div className="innovative-card__inner">
+                <div className="md:h-[17.3125rem]">
+                  <Image src={img} alt="" width={380} height={277}></Image>
+                </div>
+                <div className="p-8 pt-0">
+                  <h3 className="text-xl mb-3">{title}</h3>
+                  <p className="text-base leading-[137.5%]">{description}</p>
+                </div>
               </div>
             </div>
-          </div>
-          <div className="innovative-card max-w-[23.75rem]">
-            <div className="innovative-card__inner">
-              <Image
-                src="/images/cloud-img.svg"
-                alt=""
-                width={380}
-                height={277}
-              ></Image>
-              <div className="p-8 pt-0">
-                <h3 className="text-xl mb-3">
-                  Cloud Solutions & Infrastructure Management
-                </h3>
-                <p className="text-base leading-[137.5%]">
-                  Leverage the cloud for scalability and efficiency. We provide
-                  comprehensive cloud infrastructure management and optimization
-                  services.
-                </p>
-              </div>
-            </div>
-          </div>
-          <div className="innovative-card max-w-[23.75rem]">
-            <div className="innovative-card__inner">
-              <Image
-                src="/images/testing-img.svg"
-                alt=""
-                width={380}
-                height={277}
-              ></Image>
-              <div className="p-8 pt-0">
-                <h3 className="text-xl mb-3">
-                  Automated Testing & Quality Assurance
-                </h3>
-                <p className="text-base leading-[137.5%]">
-                  Enhance product quality with our automated testing services,
-                  designed to detect issues early and reduce time-to-market.
-                </p>
-              </div>
-            </div>
-          </div>
+          ))}
         </div>
       </div>
     </section>

@@ -4,6 +4,10 @@ import { useState, useEffect, useCallback } from "react";
 import Image from "next/image";
 import fakeApiRequest from "@/app/api/fakeApiRequest";
 
+import LoadIcon from "@/icons/load-icon.svg";
+import SuccessIcon from "@/icons/success-icon.svg";
+import ErrorIcon from "@/icons/error-icon.svg";
+
 export default function FormFreeTrial() {
   const [placeholder, setPlaceholder] = useState("Your business email...");
 
@@ -61,27 +65,31 @@ export default function FormFreeTrial() {
   const getStatusMessage = (status: string) => {
     if (status === "loading") {
       return (
-        <div className="w-11 shrink-0 aspect-1-1 rounded-full bg-(--secondary-blue) mr-[0.375rem]">
+        <div className="w-11 shrink-0 aspect-1-1 rounded-full bg-secondary-blue mr-[0.375rem]">
           <Image
-            src="./icons/load-icon.svg"
+            src={LoadIcon}
             width={44}
             height={44}
             alt=""
-            className="rotate"
+            className="animate-spin"
           />
         </div>
       );
     } else if (status === "success") {
       return (
-        <div className="w-11 shrink-0 aspect-1-1 rounded-full bg-(--primary-green) mr-[0.375rem]">
-          <Image src="./icons/success-icon.svg" width={44} height={44} alt="" />
+        <div className="w-11 shrink-0 aspect-1-1 rounded-full bg-primary-green mr-[0.375rem] ">
+          <Image src={SuccessIcon} width={44} height={44} alt="" />
         </div>
       );
     } else if (status === "error") {
       return (
-        <div className="w-11 shrink-0 aspect-1-1 rounded-full bg-(--primary-pink) mr-[0.375rem]">
-          <Image src="./icons/error-icon.svg" width={44} height={44} alt="" />
-        </div>
+        <button
+          className="w-11 shrink-0 aspect-1-1 rounded-full bg-primary-pink mr-[0.375rem] cursor-pointer"
+          type="submit"
+          onClick={ResetForm}
+        >
+          <Image src={ErrorIcon} width={44} height={44} alt="" />
+        </button>
       );
     }
     return (

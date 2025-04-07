@@ -4,15 +4,7 @@ export default function Ready() {
   return (
     <section className="pb-[11rem] text-center">
       <div className="container flex flex-col items-center ready-container-bg">
-        <h2
-          className="mb-5 w-fit"
-          style={{
-            background:
-              "linear-gradient(90deg, rgba(109, 156, 246, 0.7) 0%, rgba(195, 214, 251, 0.88) 15.93%, #fff 51.07%, rgba(208, 223, 252, 0.9) 81.29%, rgba(109, 156, 246, 0.7) 100%)",
-            WebkitBackgroundClip: "text",
-            WebkitTextFillColor: "transparent",
-          }}
-        >
+        <h2 className="mb-5 w-fit bg-[linear-gradient(90deg,_rgba(109,156,246,0.7)_0%,_rgba(195,214,251,0.88)_15.93%,_#fff_51.07%,_rgba(208,223,252,0.9)_81.29%,_rgba(109,156,246,0.7)_100%)] bg-clip-text text-transparent">
           Ready to elevate your DevOps strategy?
         </h2>
         <p className="mb-10">

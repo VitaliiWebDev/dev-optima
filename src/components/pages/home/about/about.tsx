@@ -1,5 +1,34 @@
 import Image from "next/image";
 
+import AboutImg from "@/images/about-img.svg";
+import TransformationIcon from "@/icons/transformation-icon.svg";
+import OperationsIcon from "@/icons/operations-icon.svg";
+import ImplementationIcon from "@/icons/implementation-icon.svg";
+import AutomationIcon from "@/icons/automation-icon.svg";
+
+const aboutData = [
+  {
+    ico: TransformationIcon,
+    title: "DevOps transformation",
+    description: "Reshaping businesses with DevOps expertise.",
+  },
+  {
+    ico: OperationsIcon,
+    title: "Efficient operations",
+    description: "Streamline processes for productivity gains.",
+  },
+  {
+    ico: ImplementationIcon,
+    title: "CI/CD implementation",
+    description: "Seamless software delivery pipeline.",
+  },
+  {
+    ico: AutomationIcon,
+    title: "Automation mastery",
+    description: "Unlock full automation potential.",
+  },
+];
+
 export default function About() {
   return (
     <section className="mt-25 mb-10 lg:mb-38">
@@ -8,7 +37,7 @@ export default function About() {
           <div className="lg:pr-[5.375rem] max-lg:order-2">
             <div className="about-img-round flex lg:justify-end">
               <Image
-                src="/images/about-img.svg"
+                src={AboutImg}
                 alt="About Image"
                 width={1000}
                 height={619}
@@ -24,60 +53,15 @@ export default function About() {
               and operations.
             </p>
             <div className="grid grid-cols-2 lg:grid-cols-[15.125rem_15.125rem] gap-x-10 lg:gap-x-20 gap-y-10">
-              <div>
-                <div className="ico-primary mb-4">
-                  <Image
-                    src="/icons/transformation-icon.svg"
-                    alt=""
-                    width={36}
-                    height={36}
-                  />
+              {aboutData.map(({ ico, title, description }) => (
+                <div key={title}>
+                  <div className="ico-primary mb-2">
+                    <Image src={ico} alt="" width={36} height={36} />
+                  </div>
+                  <h3 className="mb-2">{title}</h3>
+                  <p className="text-base">{description}</p>
                 </div>
-                <h3 className="text-xl mb-2">DevOps transformation</h3>
-                <p className="text-base">
-                  Reshaping businesses with DevOps expertise.
-                </p>
-              </div>
-              <div>
-                <div className="ico-primary mb-4">
-                  <Image
-                    src="/icons/operations-icon.svg"
-                    alt=""
-                    width={36}
-                    height={36}
-                  />
-                </div>
-                <h3 className="text-xl mb-2">Efficient operations</h3>
-                <p className="text-base">
-                  Streamline processes for productivity gains.
-                </p>
-              </div>
-              <div>
-                <div className="ico-primary mb-4">
-                  <Image
-                    src="/icons/implementation-icon.svg"
-                    alt=""
-                    width={36}
-                    height={36}
-                  />
-                </div>
-                <h3 className="text-xl mb-2">CI/CD implementation</h3>
-                <p className="text-base">
-                  Seamless software delivery pipeline.
-                </p>
-              </div>
-              <div>
-                <div className="ico-primary mb-4">
-                  <Image
-                    src="/icons/automation-icon.svg"
-                    alt=""
-                    width={36}
-                    height={36}
-                  />
-                </div>
-                <h3 className="text-xl mb-2">Automation mastery</h3>
-                <p className="text-base">Unlock full automation potential.</p>
-              </div>
+              ))}
             </div>
           </div>
         </div>
